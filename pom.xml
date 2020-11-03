@@ -18,12 +18,23 @@
 								<goal>wsimport</goal>
 							</goals>
 						</execution>
+						<execution>
+							<id>generate-wsdl</id>
+							<phase>process-classes</phase>
+							<goals>
+								<goal>wsgen</goal>
+							</goals>
+							<configuration>
+								<sei><!-- fully qualified class name goes here --></sei>
+								<genWsdl>true</genWsdl>
+							</configuration>
+						</execution>
 					</executions>
 					
 					<configuration>
 						<wsdlDirectory>${project.basedir}/src/main/resources/wsdl</wsdlDirectory>
 						<wsdlFiles>
-						<wsdlFile>EmployeeProfile.wsdl</wsdlFile>
+						<wsdlFile>employeeservicetopdown.wsdl</wsdlFile>
 						</wsdlFiles>
 						<packageName>com.msinfo.code.generate.ws</packageName>
 						

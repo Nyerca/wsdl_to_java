@@ -1,5 +1,5 @@
 package com.mycompany.app;
-
+/*
 import com.msinfo.code.generate.ws.Address;
 import com.msinfo.code.generate.ws.EmployeeProfile;
 
@@ -13,3 +13,4 @@ public class EmployeeProfilePortTypeImpl implements com.msinfo.code.generate.ws.
         return emp;
     }
 }
+*/
