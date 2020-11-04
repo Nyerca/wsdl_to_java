@@ -3,6 +3,11 @@ TO EXECUTE:
 mvn clean
 mvn jaxws:wsimport
 
+<top:countEmployees><arg0>
+      <employee><name>prov1</name></employee>
+      <employee><name>prov2</name></employee>
+      <employee><name>prov3</name></employee>
+      </arg0></top:countEmployees>
 
 
 

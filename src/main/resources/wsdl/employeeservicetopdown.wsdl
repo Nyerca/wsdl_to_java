@@ -10,10 +10,24 @@
         <xsd:schema
                 targetNamespace="http://topdown.server.jaxws.baeldung.com/">
             <xsd:element name="countEmployeesResponse" type="xsd:int"/>
+            <xsd:element name="countEmployees" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="employee" minOccurs="0" maxOccurs="unbounded"> <!-- there will be zero or more <item> elements in sequence -->
+                            <xsd:complexType> <!-- they all have complex type -->
+                                <xsd:sequence> <!-- each of them will have next sequence of elements -->
+                                    <xsd:element name="name" type="xsd:string"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
         </xsd:schema>
     </types>
 
     <message name="countEmployees">
+        <part name="parameters" element="tns:countEmployees"/>
     </message>
     <message name="countEmployeesResponse">
         <part name="parameters" element="tns:countEmployeesResponse"/>
